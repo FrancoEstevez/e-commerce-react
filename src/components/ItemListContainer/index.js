@@ -1,67 +1,27 @@
 import React, { useState, useEffect } from "react";
-import Tittle from "../Tittle";
-import Count from "../Count";
-import getFetch from "../../helpers/getFetch";
+import { getItems } from "../../helpers/getItems";
+import { ItemList } from "../ItemList";
 
-const ItemListContainer = ({greeting}) => {
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
-  
+export const ItemListContainer = ({ greeting }) => {
+  const [loading, setLoading] = useState(true);
+  const [items, setItems] = useState([]);
+
   useEffect(() => {
-    getFetch
-    .then((answer)=> {
-      return answer
-    })
-    .then((resp) => setProducts(resp))
-    .catch(err => console.log(err))
-    .finally(()=> setLoading(false))    
-  }, [])
-  
-    const onAdd = (cant) => {
-       console.log(cant) 
-    }
+    const fetchItems = async () => {
+      try {
+        const products = await getItems();
+        setItems(products);
+      } catch {
+        console.error("Couldn't get products :(");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  console.log(products)
+    fetchItems();
+  }, []);
 
-  return (
-    <div>
-      <div style={{ width: 300, margin: "auto", alignContent: "space-around" }}>
-      <Tittle tittle= {'Tittle'} subtittle='Subtittle' greeting={() => console.log('Saludos')}/>
-        <Count initial={1} stock={9} onAdd={onAdd} />
-      </div>
-      <div>
-        <h1>{ greeting }</h1>
-        {   loading ? <h1>Loading...</h1>
-            :
-            products.map((prod) => <div 
-                                        key={prod.id}
-                                        className='card col-md-4'
-                                        style={{width: 400, margin: 50, display: 'inline-block', borderRadius: 8}}
-                                    >   <div className='card-img-top'>
-                                          <img src={prod.foto} alt='' className='w-100' style={{height: "200px",  borderRadius: 7}}/>
-                                        </div>  
-                                        <div className='card-tittle'  style={{fontFamily: "Bebas Neue"}}>
-                                          {`${prod.marca} - ${prod.modelo}`}
-                                        </div>   
-                                        <div className='card-text'>
-                                          {`${prod.price} U$D`} 
-                                        </div>               
-                                        <div className="card-footer" style={{backgroundColor: "#333333", borderRadius: 7}} >
-                                          {/* <Link to={`/detalle/${prod.id}`}> */}
-                                            <button  className="btn btn-outline-primary btn-block" style={{color: "white", borderColor: "white", marginLeft: "35%"}}>
-                                              Car details
-                                            </button>                                              
-                                          {/* </Link>                                             */}                                                                   
-                                        </div>
-                                      </div>
-                                    
-                                    
-            
-            )
-        }
-    </div>
-  </div>
-  );
+  return loading ? <p> Cargando... </p> : <ItemList items={items} />;
 };
 
 export default ItemListContainer;
