@@ -1,4 +1,5 @@
 import React from 'react'
+import ItemDetailContainer from './components/ItemDetailsContainer'
 import ItemListContainer from './components/ItemListContainer'
 import NavBar from './components/NavBar'
 
@@ -8,6 +9,7 @@ function App()   {
     <div>
       <NavBar />
       <ItemListContainer />
+      <ItemDetailContainer />
     </div>
   )
 }
