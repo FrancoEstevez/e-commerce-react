@@ -1,4 +1,4 @@
-header {
+.headerComputer {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -7,8 +7,26 @@ header {
     background-color: #333333;
 }
 
-h2 {
+/* @media only screen and (max-width:900px){
+    .headerComputer {
+        display: none;
+    }
+}
+
+@media only screen and (min-width:900px){
+    .headerPhone {
+        display: none;
+    }
+} */
+
+.pageTitle {
+    font-size: 1.3rem;
+    text-decoration: none;
     margin-left: 8%;
+    color: #e2e2e2;
+}
+
+.pageTitle:hover {
     color: white;
 }
 

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import './style.css'
+import { Link } from 'react-router-dom';
 
-export const Item = ({ brand, model, image, price}) => {
+
+export const Item = ({ id, brand, model, image, price}) => {
   return (
     <div
+      key={Item.id}
       className="card col-md-4"
       style={{width: 350, margin: 50, display: 'inline-block', borderRadius: 8}}
     >
@@ -16,7 +19,13 @@ export const Item = ({ brand, model, image, price}) => {
       <button className="buyButton">Buy</button>
       </div>
 
-      <button className="ButtonDetails">view details</button>
+      <Link to={`detail/${id}`} >
+        <button className="ButtonDetails">
+          view details
+          </button>                                          
+      </Link>
+
+      
     </div>
   );
 };
