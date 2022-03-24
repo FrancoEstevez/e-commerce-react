@@ -5,7 +5,7 @@ import './style.css'
 import Intercambiabilidad from '../Intercambiabilidad';
 import Count from '../Count';
 import { Link } from "react-router-dom"
-import { useCartContext } from "../CardContext/cartContext"
+import { useCartContext } from "../CartContext/cartContext"
 
 const ItemDetail = ({producto}) => {
   const [count, setCount] = useState(null)
@@ -13,12 +13,12 @@ const ItemDetail = ({producto}) => {
   console.log(detailId)
  //  const onAdd = (item) => console.log(item);
 
-  const { agregarCart, cartList } = useCartContext()
+  const { addItem, cartList } = useCartContext()
 
   const onAdd = cant =>{
     console.log(cant)
     setCount(cant)
-    agregarCart({ ...producto, cantidad: cant })
+    addItem({ ...producto, cantidad: cant })
   }
   console.log(cartList)
 

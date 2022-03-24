@@ -52,7 +52,7 @@ const products = [
 
 export const getItems = () => {
     return new Promise((resolve) => {
-      setTimeout(() => resolve(products), 3000);
+      setTimeout(() => resolve(products), 1000);
     });
   };
   
@@ -60,6 +60,8 @@ export const getItems = () => {
 
 export const getFetch = (id) => {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(products.find(prod => prod.id === id)), 3000);
+    setTimeout(() => resolve(products.find(prod => prod.id === id)), 1000);
   });
 };
+
+export default products
