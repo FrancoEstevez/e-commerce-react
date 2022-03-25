@@ -37,12 +37,13 @@ const ItemDetail = ({producto}) => {
         
         </div>
       </div>
-        <Count initial={1} stock={10} onAdd={onAdd} />
-        <Intercambiabilidad />
-
-        <Link to='/cart'>
-              <button className='btn btn-outline-primary'>Ir al Cart</button>
-        </Link> 
+      { count ?
+            <Link to='/cart'>
+              <button className='finishBtnCount'>Go to Cart</button>
+            </Link> 
+          :
+            <Count initial={1} stock={10} onAdd={onAdd} />
+        }
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import '../ItemDetail/style.css'
+import { NavLink } from 'react-router-dom';
 
 const Count = ({ initial, stock, onAdd }) => {
   const [count, setCount] = useState(initial);
@@ -30,9 +31,12 @@ const Count = ({ initial, stock, onAdd }) => {
           +{" "}
         </button>
       </div>
+
+
       <button className="addBtnCount btn" onClick={Add}>
-        <p style={{color: "white"}}>add</p>
-      </button>
+          <p style={{color: "white"}}>Add amount</p>
+        </button>
+
     </div>
   );
 };

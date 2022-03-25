@@ -20,8 +20,7 @@ const Navbar = () => {
           </div>
 
       <NavLink to ="cart">
-      <img className='fotoCarro' src="https://gogeticons.com/frontend/web/icons/data/7/3/9/2/1/shopping%20cart_512.png"/>
-
+        <img className='fotoCarro' src="https://gogeticons.com/frontend/web/icons/data/7/3/9/2/1/shopping%20cart_512.png"/>
       </NavLink>
       </div>
     </header>

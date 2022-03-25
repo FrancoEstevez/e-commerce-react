@@ -1,5 +1,43 @@
-.fotoCarro {
-    width: 50px;
-    height: 50px;
-    margin-right: 3%;
+.emptyCart {
+    border-radius: 5px;
+    margin-left: 5%;
+    background-color: white;
+    border-color: black;
+}
+
+.rightContainer {
+    margin-left: 5%;
+}
+
+.cartItemContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.imageCart {
+    width: 20%;
+    border-radius: 5px;
+}
+
+.deleteCartItems {
+    margin-top: 5%;
+    height: 30%;
+}
+
+.imgCartContainer{
+    width: 100%;
+}
+
+.infoItemCart {
+    margin-left: 1%;
+    width: 20%;
+}
+
+.cartCarName{
+    margin-left: 1%;
+    font-size: 1.3rem;
 }

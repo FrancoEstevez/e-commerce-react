@@ -33,9 +33,13 @@ function CartContextProvider({children}) {
             temporalCartList[index].cantidad = cartList[index].cantidad - 1
             setCartList([...temporalCartList]) 
         } else {
-            // cantidad = 1, eliminar del carrido
-            console.log("couldn't load")
-           
+            // eliminar si cantidad = 1
+            const index = cartList.findIndex(cartProduct => product.id === cartProduct.id);
+            if (index > -1) {
+                const temporalCartList = [...cartList]
+                temporalCartList.splice(index, 1);
+                setCartList([...temporalCartList]) 
+            }
         }
         
     }
@@ -44,12 +48,21 @@ function CartContextProvider({children}) {
         setCartList( [])
     }
 
+    const totalPrice = () => {
+        let price = 0
+        cartList.forEach(cartProduct => {
+            price = price + (cartProduct.price * cartProduct.cantidad)
+        })
+        return price;
+    } 
+
     return (
         <CartContext.Provider value={{
             cartList,
             addItem,
             emptyCart,
             substractItem,
+            totalPrice,
         }}>
             {children}
         </CartContext.Provider>

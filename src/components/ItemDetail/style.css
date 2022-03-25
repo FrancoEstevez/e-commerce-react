@@ -55,5 +55,14 @@
     font-size: 25px;
   }
 
+.finishBtnCount {
+  color: white;
+  background-color: #333333;
+  width: 15%;
+  border-radius: 5px;
+  border: none;
+  margin-left: 52%;
+}
+
   
   
