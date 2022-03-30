@@ -40,7 +40,7 @@ function Cart() {
           :
           <div className="cartBanner">
             <div className="cartBannerHeader">
-              <p className="cartBannerText">Your cart is empty. </p>
+              <p className="cartBannerText">Your cart is empty.</p>
               <p className="cartBannerText">
                 Start shopping through the varity of books in our page.{" "}
               </p>
