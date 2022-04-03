@@ -44,6 +44,14 @@ function CartContextProvider({children}) {
         
     }
 
+    const totalProductsQuantity = () => {
+        let productsQuantity = 0;
+        cartList.forEach(cartProduct => {
+            productsQuantity = productsQuantity + cartProduct.cantidad
+        })
+        return productsQuantity;
+    } 
+
     const emptyCart = () => {
         setCartList( [])
     }
@@ -63,6 +71,7 @@ function CartContextProvider({children}) {
             emptyCart,
             substractItem,
             totalPrice,
+            totalProductsQuantity,
         }}>
             {children}
         </CartContext.Provider>

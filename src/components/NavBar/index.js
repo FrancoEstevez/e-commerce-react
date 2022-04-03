@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import CartWidget from '../CartWidget';
+import Cart from '../Cart';
+import CartWidget from '../CartWidget/index';
 import './Navbar.css'
 
 const Navbar = () => {
@@ -20,7 +21,7 @@ const Navbar = () => {
           </div>
 
       <NavLink to ="cart">
-        <img className='fotoCarro' src="https://gogeticons.com/frontend/web/icons/data/7/3/9/2/1/shopping%20cart_512.png"/>
+        <CartWidget />
       </NavLink>
       </div>
     </header>
