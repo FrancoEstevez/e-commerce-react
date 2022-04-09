@@ -34,6 +34,13 @@ function Cart() {
                 Empty Cart
               </button>
             </div>
+            <div className="finishShoppingBtn">
+              <Link to="/AccountForm">
+                <button className="btn btn-outline-success">
+                  Finish Shopping
+                </button>
+              </Link>
+            </div>            
           </div>
           :
           <div className="cartBanner">
