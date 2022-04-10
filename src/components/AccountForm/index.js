@@ -34,7 +34,7 @@ const AccountForm = () => {
 
     order.items = cartList.map((cartItem) => {
       const id = cartItem.id;
-      const name = cartItem.name;
+      const name = cartItem.brand;
       const price = cartItem.price * cartItem.cantidad;
 
       return { id, name, price };
