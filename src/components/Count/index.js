@@ -34,7 +34,7 @@ const Count = ({ initial, stock, onAdd }) => {
 
 
       <button className="addBtnCount btn" onClick={Add}>
-          <p style={{color: "white"}}>Add amount</p>
+          <p className="addAmountText">Add amount</p>
         </button>
 
     </div>

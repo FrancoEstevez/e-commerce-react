@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom';
 import { useState } from "react"
 import React from 'react';
 import './style.css'
-import Intercambiabilidad from '../Intercambiabilidad';
 import Count from '../Count';
 import { Link } from "react-router-dom"
 import { useCartContext } from "../CartContext/cartContext"
@@ -10,17 +9,13 @@ import { useCartContext } from "../CartContext/cartContext"
 const ItemDetail = ({producto}) => {
   const [count, setCount] = useState(null)
   const { detailId } = useParams()
-  console.log(detailId)
- //  const onAdd = (item) => console.log(item);
 
   const { addItem, cartList } = useCartContext()
 
   const onAdd = cant =>{
-    console.log(cant)
     setCount(cant)
     addItem({ ...producto, cantidad: cant })
   }
-  console.log(cartList)
 
   return (
     <div>

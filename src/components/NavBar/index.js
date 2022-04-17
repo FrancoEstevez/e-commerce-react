@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import Cart from '../Cart';
 import CartWidget from '../CartWidget/index';
-import './Navbar.css'
+import './style.css'
 
 const Navbar = () => {
   return (

@@ -60,3 +60,92 @@
     width: 100%;
     border: none;
 }
+
+
+  .confirmationModal {
+    width: 430px;
+    height: 500px;
+  }
+  
+  .textModal {
+    text-align: center;
+    margin: 30px;
+  }
+  
+  .orderModalSummery {
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 5%;
+  }
+  
+  .orderTittleModal {
+    font-size: 25px;
+    font-family: fangsong;
+  }
+  
+  .orderTextModal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .totalPriceModal {
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+  }
+  
+  .orderModal {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .itemModalContainer {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 3%;
+    padding: 3%;
+    margin: 5px;
+    border-width: 90%;
+    justify-content: space-around;
+  }
+  
+  .itemModalImg {
+    width: 100px;
+    height: 130px;
+  }
+  
+  .itemModalInformation {
+    margin-left: 3%;
+    max-width: 150px;
+  }
+  
+  .itemModalTittle {
+    font-family: fangsong;
+  }
+  
+  .itemModalPrice {
+    border-top: 1px solid #ccc;
+    font-size: 22px;
+    margin-top: 2%;
+  }
+  
+  .itemModalInStock {
+    font-size: 11px;
+    margin-top: 5%;
+  }
+
+  .loginForm {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+    color: dimgrey;
+  }
+  

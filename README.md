@@ -1,3 +1,12 @@
+# Introduction
+
+This project is a online cars shop simulation with five different sections diving the products apart from "Home".
+
+## Focus
+
+I wanted to focus on experience of the user.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

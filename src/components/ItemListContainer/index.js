@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { getItems } from "../../helpers/getItems"
 import { useParams } from "react-router-dom"
 import { ItemList } from "../ItemList";
-import { collection, doc, getDoc, getDocs, getFirestore, limit, query, where } from "firebase/firestore"
+import { collection, getDocs, getFirestore, limit, query, where } from "firebase/firestore"
 
 export const ItemListContainer = ({ greeting }) => {
   const [loading, setLoading] = useState(true);
@@ -23,13 +22,19 @@ export const ItemListContainer = ({ greeting }) => {
         getDocs(queryColection)
         .then(resp => setItems( resp.docs.map(item => ( { id: item.id, ...item.data() } ) ) ))
         .catch(err => console.log(err))
-        .finally(()=> setLoading(false))             
+        .finally(()=> setLoading(false))
     }
 
 }, [categoriaId])
 
-    console.log(items)
-  return loading ? <p> Cargando... </p> : <ItemList items={items} />;
+  return (
+    <>
+    <h1>{greeting}</h1>
+    <h6>{categoriaId}</h6>
+
+      {loading ? <p> Loading... </p> : <ItemList items={items} />}
+  </>
+    ) 
 };
 
  export default ItemListContainer;

@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
       .finally(() =>setLoading(false))
     }, [])
 
-    return (loading || !producto) ? <p> Cargando... </p> : <ItemDetail producto={producto} />
+    return (loading || !producto) ? <p> Loading... </p> : <ItemDetail producto={producto} />
 }
 
 export default ItemDetailContainer
